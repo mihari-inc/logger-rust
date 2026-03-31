@@ -60,6 +60,11 @@ impl Transport {
         let _ = self.tx.send(TransportCommand::Shutdown);
         self.shutdown_notify.notified().await;
     }
+
+    /// Send a shutdown command without waiting (best-effort, for use in `Drop`).
+    pub(crate) fn request_shutdown(&self) {
+        let _ = self.tx.send(TransportCommand::Shutdown);
+    }
 }
 
 /// Core flush loop running on a background tokio task.

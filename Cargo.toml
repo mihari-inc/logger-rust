@@ -2,6 +2,7 @@
 name = "mihari"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.70"
 authors = ["Mihari Contributors"]
 description = "A lightweight, async log collection and transport library for Rust"
 license = "MIT"

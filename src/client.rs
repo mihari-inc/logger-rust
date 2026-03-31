@@ -136,12 +136,9 @@ impl Drop for Mihari {
     fn drop(&mut self) {
         // If this is the last Arc reference, attempt a best-effort sync flush.
         if Arc::strong_count(&self.inner) == 1 {
-            // We cannot do async work inside Drop, but we can send a Shutdown
-            // command which the transport will process.
-            let _ = self.inner.transport.send(LogEntry::new(
-                LogLevel::Debug,
-                "mihari client shutting down (drop)",
-            ));
+            // We cannot do async work inside Drop, but we can send a
+            // shutdown command which the transport will process.
+            self.inner.transport.request_shutdown();
         }
     }
 }
