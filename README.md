@@ -1,8 +1,8 @@
-# mihari
+# mihari-logger
 
 A lightweight, async log collection and transport library for Rust.
 
-Mihari batches log entries and ships them to an HTTP ingestion API with gzip compression, automatic retries, and graceful shutdown. It integrates with the `tracing` ecosystem via a subscriber layer.
+Mihari Logger batches log entries and ships them to an HTTP ingestion API with gzip compression, automatic retries, and graceful shutdown. It integrates with the `tracing` ecosystem via a subscriber layer.
 
 ## Features
 
@@ -22,7 +22,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-mihari = "0.1"
+mihari-logger = "0.1"
 ```
 
 ## Quick start
@@ -30,7 +30,7 @@ mihari = "0.1"
 ### Direct API
 
 ```rust
-use mihari::Mihari;
+use mihari_logger::Mihari;
 
 #[tokio::main]
 async fn main() {
@@ -57,7 +57,7 @@ async fn main() {
 ### With the `tracing` ecosystem
 
 ```rust
-use mihari::{Mihari, MihariLayer};
+use mihari_logger::{Mihari, MihariLayer};
 use tracing_subscriber::prelude::*;
 
 #[tokio::main]

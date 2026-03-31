@@ -28,7 +28,7 @@ pub struct Config {
 ///
 /// # Example
 /// ```rust,no_run
-/// use mihari::ConfigBuilder;
+/// use mihari_logger::ConfigBuilder;
 ///
 /// let config = ConfigBuilder::new("my-token")
 ///     .endpoint("https://custom.endpoint/v1/logs")

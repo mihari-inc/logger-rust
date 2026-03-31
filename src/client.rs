@@ -16,7 +16,7 @@ const META_RUST_VERSION: &str = "_rust_version";
 /// # Example
 /// ```rust,no_run
 /// # async fn example() {
-/// use mihari::Mihari;
+/// use mihari_logger::Mihari;
 ///
 /// let client = Mihari::builder("my-token").build();
 /// client.info("server started").await;

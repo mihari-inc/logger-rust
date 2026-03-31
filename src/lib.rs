@@ -1,4 +1,4 @@
-//! # mihari
+//! # mihari-logger
 //!
 //! A lightweight, async log collection and transport library for Rust.
 //!
@@ -8,7 +8,7 @@
 //! ## Quick start
 //!
 //! ```rust,no_run
-//! use mihari::Mihari;
+//! use mihari_logger::Mihari;
 //!
 //! #[tokio::main]
 //! async fn main() {
@@ -26,7 +26,7 @@
 //! ## With the `tracing` ecosystem
 //!
 //! ```rust,no_run
-//! use mihari::{Mihari, MihariLayer};
+//! use mihari_logger::{Mihari, MihariLayer};
 //! use tracing_subscriber::prelude::*;
 //!
 //! #[tokio::main]

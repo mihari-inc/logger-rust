@@ -1,12 +1,12 @@
 [package]
-name = "mihari"
+name = "mihari-logger"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.70"
 authors = ["Mihari Contributors"]
 description = "A lightweight, async log collection and transport library for Rust"
 license = "MIT"
-repository = "https://github.com/mihari-io/mihari-rust"
+repository = "https://github.com/mihari-io/logger-rust"
 keywords = ["logging", "observability", "tracing", "log-collection"]
 categories = ["development-tools::debugging"]
 readme = "README.md"
