@@ -1,4 +1,5 @@
-use mihari::Mihari;
+use mihari_logger::Mihari;
+use mihari_logger::{LogEntry, LogLevel};
 
 #[tokio::main]
 async fn main() {
@@ -14,7 +15,7 @@ async fn main() {
     client.error("failed to connect to payment gateway").await;
 
     // Custom log entry with extra fields.
-    let entry = mihari::LogEntry::new(mihari::LogLevel::Info, "user signed in")
+    let entry = LogEntry::new(LogLevel::Info, "user signed in")
         .with_meta("user_id", "usr_42")
         .with_meta("ip", "203.0.113.42");
     client.send(entry);

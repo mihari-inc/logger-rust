@@ -1,4 +1,4 @@
-use mihari::{LogEntry, LogLevel, Mihari, MihariLayer};
+use mihari_logger::{LogEntry, LogLevel, Mihari, MihariLayer};
 use std::time::Duration;
 use tracing_subscriber::prelude::*;
 use wiremock::matchers::{bearer_token, header, method, path};

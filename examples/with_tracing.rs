@@ -1,4 +1,4 @@
-use mihari::{Mihari, MihariLayer};
+use mihari_logger::{Mihari, MihariLayer};
 use tracing_subscriber::prelude::*;
 
 #[tokio::main]
