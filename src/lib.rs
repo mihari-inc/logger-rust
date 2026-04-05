@@ -46,8 +46,8 @@
 mod client;
 mod config;
 mod entry;
-mod transport;
 mod tracing_layer;
+mod transport;
 
 // ── Public API re-exports ───────────────────────────────────────────
 pub use client::{Mihari, MihariBuilder};

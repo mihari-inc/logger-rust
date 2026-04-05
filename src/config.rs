@@ -99,7 +99,11 @@ impl ConfigBuilder {
     }
 
     /// Attach a default metadata field to every log entry.
-    pub fn with_meta(mut self, key: impl Into<String>, value: impl Into<serde_json::Value>) -> Self {
+    pub fn with_meta(
+        mut self,
+        key: impl Into<String>,
+        value: impl Into<serde_json::Value>,
+    ) -> Self {
         self.default_metadata.push((key.into(), value.into()));
         self
     }

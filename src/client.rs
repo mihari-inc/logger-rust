@@ -121,7 +121,10 @@ impl Mihari {
         let mut entry = LogEntry::new(level, message)
             .with_meta(META_HOSTNAME, self.inner.hostname.clone())
             .with_meta(META_PID, self.inner.pid)
-            .with_meta(META_RUST_VERSION, option_env!("CARGO_PKG_RUST_VERSION").unwrap_or("unknown"));
+            .with_meta(
+                META_RUST_VERSION,
+                option_env!("CARGO_PKG_RUST_VERSION").unwrap_or("unknown"),
+            );
 
         // Attach default metadata from config.
         for (key, value) in &self.inner.config.default_metadata {
@@ -186,7 +189,11 @@ impl MihariBuilder {
     }
 
     /// Add a default metadata field to every log entry.
-    pub fn with_meta(mut self, key: impl Into<String>, value: impl Into<serde_json::Value>) -> Self {
+    pub fn with_meta(
+        mut self,
+        key: impl Into<String>,
+        value: impl Into<serde_json::Value>,
+    ) -> Self {
         self.config_builder = self.config_builder.with_meta(key, value);
         self
     }

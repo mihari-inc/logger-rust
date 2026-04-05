@@ -101,30 +101,22 @@ impl Visit for FieldVisitor {
     }
 
     fn record_i64(&mut self, field: &Field, value: i64) {
-        self.fields.push((
-            field.name().to_string(),
-            serde_json::json!(value),
-        ));
+        self.fields
+            .push((field.name().to_string(), serde_json::json!(value)));
     }
 
     fn record_u64(&mut self, field: &Field, value: u64) {
-        self.fields.push((
-            field.name().to_string(),
-            serde_json::json!(value),
-        ));
+        self.fields
+            .push((field.name().to_string(), serde_json::json!(value)));
     }
 
     fn record_f64(&mut self, field: &Field, value: f64) {
-        self.fields.push((
-            field.name().to_string(),
-            serde_json::json!(value),
-        ));
+        self.fields
+            .push((field.name().to_string(), serde_json::json!(value)));
     }
 
     fn record_bool(&mut self, field: &Field, value: bool) {
-        self.fields.push((
-            field.name().to_string(),
-            serde_json::json!(value),
-        ));
+        self.fields
+            .push((field.name().to_string(), serde_json::json!(value)));
     }
 }

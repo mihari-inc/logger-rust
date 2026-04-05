@@ -64,7 +64,11 @@ impl LogEntry {
     }
 
     /// Attach a metadata key-value pair to this entry.
-    pub fn with_meta(mut self, key: impl Into<String>, value: impl Into<serde_json::Value>) -> Self {
+    pub fn with_meta(
+        mut self,
+        key: impl Into<String>,
+        value: impl Into<serde_json::Value>,
+    ) -> Self {
         self.metadata.insert(key.into(), value.into());
         self
     }
@@ -83,8 +87,7 @@ mod tests {
 
     #[test]
     fn log_entry_serialises_correctly() {
-        let entry = LogEntry::new(LogLevel::Info, "hello world")
-            .with_meta("service", "test-svc");
+        let entry = LogEntry::new(LogLevel::Info, "hello world").with_meta("service", "test-svc");
 
         let json = serde_json::to_value(&entry).unwrap();
         assert_eq!(json["level"], "info");
